@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #ADD8E6;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: #000080;
+      text-align: center;
+      padding: 22px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a.logo {
+      float: left;
+      padding: 10px 16px;
+    }
+
+    .topnav a:hover {
+      background-color: #000080;
+      color: white;
+    }
+
+    .topnav a.active {
+      background-color: #000080;
+      color: white;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .login-container {
+      text-align: center;
+      margin: 20px 10%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: 30%;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container form {
+      text-align: center;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .login-container input {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .login-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-container.news-container {
+      float: right;
+      margin-right: 40;
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* Adjust styles for medium-sized screens */
+      .login-container {
+        width: 50%;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      /* Adjust styles for small screens */
+      .login-container {
+        width: 80%;
+      }
+
+      body {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a class="logo" href="#logo"><img src="logo.png" alt="Logo" style="width:42px;height:42px;"></a>
+    <a href="#login">校園網登入</a>
+    <a href="#campus">校園</a>
+    <a href="#us">我們</a>
+    <a href="#campusNews">校園動態</a>
+    <a href="#related">相關</a>
+    <a href="#studentClub">學生社團</a>
+  </div>
+
+  <img src="校.jpg" alt="Campus Image" class="center" style="width: 50%; height: 400px;">
+
+  <!-- Campus News Section -->
+  <div class="login-container news-container">
+    <h2>校園新聞</h2>
+    <form action="/post_news" method="post">
+      <label for="news1">1. 中疾控：11月份新增新冠病毒感染重症病例135例:</label>
+      <label for="content1">2. 演员周海媚因病去世，曾出演《倚天屠龙记》周芷若:</label>
+      <label for="news2">3. 多措并举确保粮食安全:</label>
+      <label for="content2">4. 重点工程、重大科技基础设施加速推进 为高质量发展蓄势赋能:</label>
+      <label for="news3">5. 中央经济工作会议：要统筹化解房地产、地方债务、中小金融机构等风险:</label>
+      <label for="content3">6. 中央经济工作会议：要统筹化解房地产、地方债务、中小金融机构等风险:</label>
+    </form>
+  </div>
+
+  <!-- Campus Login Section -->
+  <div class="login-container">
+    <h2>校園網登入</h2>
+    <form action="/login" method="post">
+      <label for="username">使用者名稱:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">密碼:</label>
+      <input type="password" id="password" name="password" required>
+
+      <input type="submit" value="登入">
+    </form>
+  </div>
+
+</body>
+
+</html>
