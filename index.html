@@ -8,16 +8,21 @@
   body {
     background-color: #333; /* 深色背景 */
     color: white; /* 白色文字 */
-    font-family: Arial, sans-serif; /* 使用Arial字體 */
+    font-family: 'Helvetica Neue', sans-serif; /* 使用Helvetica Neue字體 */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
   }
   .box {
-    border: 2px solid #555; /* 方框邊框 */
+    border: 1px solid #555; /* 方框邊框 */
+    background: linear-gradient(145deg, #2b2f77, #242746); /* 漸變背景 */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* 方框陰影 */
+    border-radius: 10px; /* 圓角邊框 */
     padding: 20px;
     text-align: center;
+    max-width: 300px;
   }
 </style>
 </head>
