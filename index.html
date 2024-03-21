@@ -1,71 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>躲避怪物遊戲</title>
-<style>
-  canvas {
-    background: #000; /* 黑色背景 */
-    display: block;
-    margin: 0 auto;
-  }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sugarcoin Exchange</title>
+<script>
+function calculateExchange() {
+    var sugarAmount = document.getElementById('sugarAmount').value;
+    var exchangeRate = 0.00047;
+    var usdAmount = sugarAmount * exchangeRate;
+    document.getElementById('usdAmount').value = usdAmount.toFixed(5);
+}
+</script>
 </head>
 <body>
-
-<canvas id="gameCanvas" width="480" height="320"></canvas>
-
-<script>
-  var canvas = document.getElementById('gameCanvas');
-  var ctx = canvas.getContext('2d');
-
-  // 遊戲角色和怪物的設定
-  var hero = {speed: 256, x: 0, y: 0};
-  var monster = {x: 0, y: 0};
-
-  // 觸摸滑動事件處理
-  var touchHandler = function(e) {
-    if (e.touches) {
-      e.preventDefault();
-      hero.x = e.touches[0].pageX;
-      hero.y = e.touches[0].pageY;
-    }
-  }
-
-  // 更新遊戲物件的位置
-  var update = function(modifier) {
-    // 使用 hero.speed * modifier 計算移動距離
-    // 更新 hero 和 monster 的位置
-  };
-
-  // 繪製所有物件
-  var render = function() {
-    ctx.fillStyle = 'rgb(250, 250, 250)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // 繪製 hero 和 monster
-  };
-
-  // 主遊戲循環
-  var main = function() {
-    var now = Date.now();
-    var delta = now - then;
-
-    update(delta / 1000);
-    render();
-
-    then = now;
-    requestAnimationFrame(main);
-  };
-
-  // 遊戲開始時的設定
-  var then = Date.now();
-  main(); // 開始主遊戲循環
-
-  // 監聽觸摸滑動事件
-  canvas.addEventListener('touchstart', touchHandler, false);
-  canvas.addEventListener('touchmove', touchHandler, false);
-</script>
-
+<h1>Sugarcoin to USD Exchange</h1>
+<form>
+    <label for="sugarAmount">Enter Sugarcoin amount:</label>
+    <input type="number" id="sugarAmount" name="sugarAmount" min="0" step="any" required>
+    <button type="button" onclick="calculateExchange()">Convert to USD</button>
+    <label for="usdAmount">USD Amount:</label>
+    <input type="text" id="usdAmount" name="usdAmount" readonly>
+</form>
 </body>
 </html>
